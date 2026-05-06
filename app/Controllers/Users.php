@@ -6,7 +6,19 @@ class Users extends BaseController
 {
     public function index()
     {
-        echo "<h1>Users</h1>";
+        helper('form');
+
+        echo view('templates/header');
+        echo view('login');
+        echo view('templates/footer');
+    }
+
+    public function register()
+    {
+        helper('form');
+
+        echo view('templates/header');
+        echo view('register');
+        echo view('templates/footer');
     }
 }
-
