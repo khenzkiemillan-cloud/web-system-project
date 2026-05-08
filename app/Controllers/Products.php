@@ -28,7 +28,7 @@ class Products extends BaseController {
     public function store() {
         $model = new ProductModel();
         $model->save([
-            'category_id'  => $this->request->getPost('category_id'),
+            'category_id'  => $this->request->getPost('category_id') ?: null,
             'sku'          => $this->request->getPost('sku'),
             'barcode'      => $this->request->getPost('barcode'),
             'name'         => $this->request->getPost('name'),
