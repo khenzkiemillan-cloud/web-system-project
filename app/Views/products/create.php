@@ -6,10 +6,7 @@
                 <label class="block text-xs font-bold uppercase text-slate-500 mb-1">SKU Code</label>
                 <input type="text" name="sku" class="w-full border p-3 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" placeholder="e.g. PRD-0001" required>
             </div>
-            <div>
-                <label class="block text-xs font-bold uppercase text-slate-500 mb-1">Barcode</label>
-                <input type="text" name="barcode" class="w-full border p-3 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none" placeholder="Barcode ID (Optional)">
-            </div>
+            
         </div>
         <div>
             <label class="block text-xs font-bold uppercase text-slate-500 mb-1">Product Name</label>

@@ -30,7 +30,6 @@ class Products extends BaseController {
         $model->save([
             'category_id'  => $this->request->getPost('category_id') ?: null,
             'sku'          => $this->request->getPost('sku'),
-            'barcode'      => $this->request->getPost('barcode'),
             'name'         => $this->request->getPost('name'),
             'description'  => $this->request->getPost('description'),
             'cost_price'   => $this->request->getPost('cost_price'),
@@ -59,7 +58,6 @@ class Products extends BaseController {
         $model->update($id, [
             'category_id'  => $this->request->getPost('category_id'),
             'sku'          => $this->request->getPost('sku'),
-            'barcode'      => $this->request->getPost('barcode'),
             'name'         => $this->request->getPost('name'),
             'description'  => $this->request->getPost('description'),
             'cost_price'   => $this->request->getPost('cost_price'),

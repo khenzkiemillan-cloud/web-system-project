@@ -4,7 +4,7 @@ use CodeIgniter\Model;
 class ProductModel extends Model {
     protected $table = 'products';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['category_id', 'sku', 'barcode', 'name', 'description', 'cost_price', 'retail_price', 'stock', 'min_stock'];
+    protected $allowedFields = ['category_id', 'sku', 'name', 'description', 'cost_price', 'retail_price', 'stock', 'min_stock'];
 
     public function getProductsWithCategory() {
         return $this->select('products.*, categories.name as category_name')

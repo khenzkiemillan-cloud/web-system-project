@@ -87,7 +87,7 @@ class Sales extends BaseController {
             return redirect()->back()->with('error', 'Transaction Failed!');
         }
 
-        return redirect()->to(base_url('sales/receipt/' . $saleId))->with('success', 'Sale saved!');
+       return redirect()->to(base_url('sales/create'))->with('success', 'Sale completed successfully!');
     }
 
     public function receipt($id) {
