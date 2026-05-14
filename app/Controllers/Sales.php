@@ -90,22 +90,7 @@ class Sales extends BaseController {
        return redirect()->to(base_url('sales/create'))->with('success', 'Sale completed successfully!');
     }
 
-    public function receipt($id) {
-        $saleModel = new SaleModel();
-        $itemModel = new SaleItemModel();
-
-        $data['sale'] = $saleModel->select('sales.*, customers.name as customer_name')
-                                  ->join('customers', 'customers.id = sales.customer_id', 'left')
-                                  ->where('sales.id', $id)
-                                  ->first();
-        $data['items'] = $itemModel->getItemsBySale($id);
-
-        echo view('templates/header');
-        echo view('templates/sidebar');
-        echo view('templates/navbar');
-        echo view('sales/receipt', $data);
-        echo view('templates/footer');
-    }
+    
 
     public function history() {
         $saleModel = new SaleModel();

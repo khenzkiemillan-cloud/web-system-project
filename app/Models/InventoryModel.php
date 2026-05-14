@@ -7,9 +7,10 @@ class InventoryModel extends Model {
     protected $allowedFields = ['product_id', 'change_qty', 'type', 'remarks'];
 
     public function getLogs() {
-        return $this->select('inventory_logs.*, products.name as product_name, products.sku')
-                    ->join('products', 'products.id = inventory_logs.product_id')
-                    ->orderBy('inventory_logs.created_at', 'DESC')
-                    ->findAll();
-    }
+    // ✅ CORRECT
+    return $this->select('inventory_logs.id, inventory_logs.created_at, inventory_logs.change_qty, inventory_logs.type, inventory_logs.remarks, products.name as product_name')
+                ->join('products', 'products.id = inventory_logs.product_id', 'left')
+                ->orderBy('inventory_logs.created_at', 'DESC')
+                ->findAll();
+}
 }

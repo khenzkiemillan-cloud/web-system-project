@@ -27,9 +27,10 @@ class Products extends BaseController {
 
     public function store() {
         $model = new ProductModel();
+        $categoryId = $this->request->getPost('category_id') ?: null;
         $model->save([
-            'category_id'  => $this->request->getPost('category_id') ?: null,
-            'sku'          => $this->request->getPost('sku'),
+            'category_id'  => $categoryId,
+            
             'name'         => $this->request->getPost('name'),
             'description'  => $this->request->getPost('description'),
             'cost_price'   => $this->request->getPost('cost_price'),
@@ -38,6 +39,7 @@ class Products extends BaseController {
             'min_stock'    => $this->request->getPost('min_stock'),
         ]);
         return redirect()->to(base_url('products'))->with('success', 'Product Created successfully!');
+        
     }
 
     public function edit($id = null) {
@@ -55,9 +57,10 @@ class Products extends BaseController {
 
     public function update($id = null) {
         $model = new ProductModel();
+         $categoryId = $this->request->getPost('category_id') ?: null;
         $model->update($id, [
-            'category_id'  => $this->request->getPost('category_id'),
-            'sku'          => $this->request->getPost('sku'),
+           'category_id'  => $categoryId,
+           
             'name'         => $this->request->getPost('name'),
             'description'  => $this->request->getPost('description'),
             'cost_price'   => $this->request->getPost('cost_price'),

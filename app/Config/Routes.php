@@ -54,7 +54,6 @@ $routes->group('', ['filter' => 'auth'], function($routes) {
     $routes->get('sales', 'Sales::index');
     $routes->get('sales/create', 'Sales::create');
     $routes->post('sales/store', 'Sales::store');
-    $routes->get('sales/receipt/(:num)', 'Sales::receipt/$1');
     $routes->get('sales/history', 'Sales::history');
 
   

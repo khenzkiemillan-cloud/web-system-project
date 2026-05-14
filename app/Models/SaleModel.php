@@ -7,9 +7,11 @@ class SaleModel extends Model {
     protected $allowedFields = ['invoice_no', 'customer_id', 'total_amount', 'amount_paid', 'change_amount', 'payment_type'];
 
     public function getSalesHistory() {
-        return $this->select('sales.*, customers.name as customer_name')
-                    ->join('customers', 'customers.id = sales.customer_id', 'left')
-                    ->orderBy('sales.created_at', 'DESC')
-                    ->findAll();
-    }
+     
+    // ✅ CORRECT
+    return $this->select('sales.id, sales.invoice_no, sales.created_at, sales.total_amount, sales.amount_paid, sales.payment_type, customers.name as customer_name')
+                ->join('customers', 'customers.id = sales.customer_id', 'left')
+                ->orderBy('sales.created_at', 'DESC')
+                ->findAll();
+}
 }
