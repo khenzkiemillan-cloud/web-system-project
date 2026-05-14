@@ -6,6 +6,7 @@ class PaymentModel extends Model {
     protected $primaryKey = 'id';
     protected $allowedFields = ['utang_id', 'amount_paid', 'payment_date', 'payment_method'];
 
+    
     public function getHistory() {
         return $this->select('payments.*, customers.name as customer_name, utangs.total_debt, sales.invoice_no')
                     ->join('utangs', 'utangs.id = payments.utang_id')
